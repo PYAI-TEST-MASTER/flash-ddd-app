@@ -21,7 +21,7 @@ app = Flask(__name__)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-model = load_model('./model.h5')#学習済みモデルをロード
+model = load_model('./model.h5',compile=False )#学習済みモデルをロード
 #カスケード型分類器に使用する分類器のデータ（xmlファイル）を読み込み
 #HAAR_FILE = R"C:\Users\ejpks\Application\python\Driver Drowsiness\PythonCode\source\haarcascade_eye_tree_eyeglasses.xml"
 #cascade = cv2.CascadeClassifier(HAAR_FILE)
